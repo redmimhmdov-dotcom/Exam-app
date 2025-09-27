@@ -13,16 +13,16 @@ body {
 /* الشريط الأخضر */
 .title-bar {
   background-color: #1b5e20;
-  padding: 80px 20px;
+  padding: 80px 60px;
   text-align: center;
-  border-bottom-left-radius: 40px;
-  border-bottom-right-radius: 40px;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
   flex-shrink: 0;
 }
 
 .title-bar h1 {
   color: white;
-  font-size: 34px;
+  font-size: 36px;
   font-weight: bold;
   margin: 0;
   line-height: 1.4;
