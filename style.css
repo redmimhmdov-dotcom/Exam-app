@@ -10,22 +10,26 @@ body {
   flex-direction: column;
 }
 
-/* الشريط الأخضر */
+/* الشريط الأخضر يغطي الأعلى بالكامل */
 .title-bar {
   background-color: #1b5e20;
-  padding: 80px 60px;
+  height: 40vh; /* يغطي 40% من الشاشة */
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  border-bottom-left-radius: 50px;
-  border-bottom-right-radius: 50px;
+  border-bottom-left-radius: 60px;
+  border-bottom-right-radius: 60px;
   flex-shrink: 0;
 }
 
 .title-bar h1 {
   color: white;
-  font-size: 36px;
+  font-size: 34px;
   font-weight: bold;
   margin: 0;
   line-height: 1.4;
+  padding: 0 20px;
 }
 
 /* البطاقة البيضاء */
@@ -37,7 +41,9 @@ body {
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
   box-shadow: 0 -4px 15px rgba(0,0,0,0.05);
-  margin-top: -20px;
+  margin-top: -40px;
+  z-index: 1;
+  position: relative;
 }
 
 /* الحقول */
