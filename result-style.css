@@ -1,0 +1,87 @@
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  direction: rtl;
+  background-color: #f0f4f8;
+  color: #1b5e20;
+}
+
+/* رأس الصفحة */
+.result-header {
+  background-color: #1b5e20;
+  color: white;
+  text-align: center;
+  padding: 30px 20px;
+}
+
+.result-header h1 {
+  font-size: 28px;
+  margin: 0;
+}
+
+.result-header h2 {
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+/* معلومات الطالب */
+.student-info {
+  padding: 20px;
+  background-color: white;
+  border-bottom: 2px solid #1b5e20;
+}
+
+.student-info p {
+  margin: 8px 0;
+  font-size: 16px;
+}
+
+/* المجموع والنتيجة */
+.score-summary {
+  padding: 20px;
+  background-color: #e8f5e9;
+  border-bottom: 2px solid #1b5e20;
+}
+
+.score-summary p {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.status span.fail {
+  color: red;
+  font-weight: bold;
+}
+
+/* جدول المواد */
+.subjects-table {
+  padding: 20px;
+  background-color: white;
+}
+
+.subjects-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.subjects-table th,
+.subjects-table td {
+  border: 1px solid #ccc;
+  padding: 12px;
+  text-align: center;
+  font-size: 16px;
+}
+
+.subjects-table th {
+  background-color: #c8e6c9;
+  font-weight: bold;
+}
+
+/* ملاحظة تحفيزية */
+.note {
+  text-align: center;
+  padding: 20px;
+  font-size: 18px;
+  color: #388e3c;
+}
