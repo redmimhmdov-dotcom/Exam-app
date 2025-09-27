@@ -2,68 +2,66 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
-  <title>نتيجة الطالب</title>
+  <title>استعلام النتيجة</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="result-style.css">
+  <style>
+    body {
+      font-family: Arial;
+      background-color: #f0f4f8;
+      text-align: center;
+      padding: 40px;
+    }
+    input, select {
+      padding: 10px;
+      margin: 10px;
+      width: 250px;
+      font-size: 16px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #1b5e20;
+      color: white;
+      border: none;
+      border-radius: 6px;
+    }
+    h2 {
+      color: #1b5e20;
+    }
+  </style>
 </head>
 <body>
-  <header class="app-header">
-    <h1>📘 نتيجة الطالب</h1>
-    <h2>فرع <span id="branch-label">...</span> - محافظة الحسكة - عام 2025</h2>
-  </header>
+  <h2>🔍 استعلام النتيجة</h2>
 
-  <main class="container">
-    <section class="result-grid">
-      <div class="score-box max"><span id="max-score">--</span><small>العظمى ⏫</small></div>
-      <div class="score-box status"><span class="status-text" id="status-text">...</span></div>
-      <div class="score-box min"><span id="min-score">--</span><small>الدنيا ⏬</small></div>
-      <div class="score-box total"><span id="total-score">--</span><small>المجموع</small></div>
-    </section>
-
-    <section class="card">
-      <h3>📊 العلامات</h3>
-      <table class="marks-table">
-        <thead>
-          <tr>
-            <th>المادة</th>
-            <th>الدرجة</th>
-            <th>الدرجة العظمى</th>
-            <th>الدرجة الدنيا</th>
-          </tr>
-        </thead>
-        <tbody id="marks-body"></tbody>
-      </table>
-    </section>
-  </main>
+  <input type="text" id="number" placeholder="رقم الاكتتاب">
+  <select id="branch">
+    <option value="">اختر الفرع</option>
+    <option value="أدبي">أدبي</option>
+    <option value="علمي">علمي</option>
+  </select>
+  <br>
+  <button onclick="search()">عرض النتيجة</button>
 
   <script>
-    const student = JSON.parse(localStorage.getItem("activeStudent"));
-    document.getElementById("branch-label").textContent = student.branch;
+    function search() {
+      const number = document.getElementById("number").value.trim();
+      const branch = document.getElementById("branch").value;
 
-    let total = 0, maxTotal = 0, minTotal = 0;
-    const tbody = document.getElementById("marks-body");
+      if (!number || !branch) {
+        alert("يرجى إدخال رقم الاكتتاب واختيار الفرع");
+        return;
+      }
 
-    for (const subject in student.marks) {
-      const m = student.marks[subject];
-      total += m.value;
-      maxTotal += m.max;
-      minTotal += m.min;
+      const key = "student_" + number + "_" + branch + "_2025";
+      const data = JSON.parse(localStorage.getItem(key));
 
-      const row = `<tr>
-        <td>${subject}</td>
-        <td>${m.value}</td>
-        <td>${m.max}</td>
-        <td>${m.min}</td>
-      </tr>`;
-      tbody.innerHTML += row;
+      if (data) {
+        localStorage.setItem("activeStudent", JSON.stringify(data));
+        window.location.href = "result.html";
+      } else {
+        alert("❌ لا توجد نتيجة مطابقة");
+      }
     }
-
-    document.getElementById("total-score").textContent = `${total}`;
-    document.getElementById("max-score").textContent = `${maxTotal}`;
-    document.getElementById("min-score").textContent = `${minTotal}`;
-
-    const status = total >= minTotal ? "✅ ناجح" : "⛔ راسب";
-    document.getElementById("status-text").textContent = status;
   </script>
 </body>
 </html>
