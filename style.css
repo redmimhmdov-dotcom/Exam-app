@@ -11,7 +11,7 @@ body {
   overflow: hidden;
 }
 
-/* الخلفية الخضراء المستطيلة */
+/* الخلفية الخضراء */
 .title-bar {
   background-color: #1b5e20;
   width: 100vw;
@@ -26,7 +26,7 @@ body {
 
 .title-bar h1 {
   color: white;
-  font-size: 34px;
+  font-size: 36px;
   font-weight: bold;
   margin: 0;
   line-height: 1.6;
@@ -39,8 +39,8 @@ body {
   z-index: 1;
   flex-grow: 1;
   background-color: white;
-  margin-top: -1px; /* دمج مباشر مع الخلفية */
-  padding: 40px 20px;
+  margin-top: -1px;
+  padding: 40px 0;
   box-sizing: border-box;
   box-shadow: 0 -4px 20px rgba(0,0,0,0.05);
   display: flex;
@@ -52,13 +52,12 @@ body {
 /* الحقول */
 .input-group {
   width: 100%;
-  max-width: 100%;
+  padding: 20px;
   margin-bottom: 20px;
   text-align: right;
   background-color: #f9f9f9;
-  border: 2px solid #1b5e20;
-  border-radius: 12px;
-  padding: 12px;
+  border: none;
+  border-bottom: 2px solid #1b5e20;
   box-sizing: border-box;
 }
 
@@ -66,20 +65,20 @@ body {
   display: block;
   color: #1b5e20;
   font-weight: bold;
-  font-size: 16px;
-  margin-bottom: 6px;
+  font-size: 18px;
+  margin-bottom: 10px;
 }
 
 .input-group select,
 .input-group input {
   width: 100%;
-  padding: 10px;
-  border: none;
-  border-radius: 6px;
+  padding: 14px;
+  border: 2px solid #1b5e20;
+  border-radius: 8px;
   background-color: white;
   color: #1b5e20;
   font-weight: bold;
-  font-size: 15px;
+  font-size: 16px;
   box-sizing: border-box;
   outline: none;
 }
@@ -98,7 +97,7 @@ body {
   top: 50%;
   left: 10px;
   transform: translateY(-50%);
-  font-size: 26px;
+  font-size: 28px;
   color: #1b5e20;
   cursor: pointer;
   transition: transform 0.2s ease;
