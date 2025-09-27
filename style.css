@@ -1,64 +1,12 @@
-/* إعدادات عامة */
-body {
-  font-family: 'Cairo', sans-serif;
-  margin: 0;
-  padding: 0;
-  direction: rtl;
-  height: 100vh;
-  background-color: #f0f4f8;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-}
-
-/* الخلفية الخضراء */
-.title-bar {
-  background-color: #1b5e20;
-  width: 100vw;
-  height: 35vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  position: relative;
-  z-index: 2;
-}
-
-.title-bar h1 {
-  color: white;
-  font-size: 36px;
-  font-weight: bold;
-  margin: 0;
-  line-height: 1.6;
-  padding: 0 20px;
-}
-
-/* البطاقة البيضاء */
-.form-card {
-  position: relative;
-  z-index: 1;
-  flex-grow: 1;
-  background-color: white;
-  margin-top: -1px;
-  padding: 40px 0;
-  box-sizing: border-box;
-  box-shadow: 0 -4px 20px rgba(0,0,0,0.05);
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-}
-
 /* الحقول */
 .input-group {
-  width: 100%;
-  padding: 20px;
+  width: 100vw; /* يغطي كامل عرض الشاشة */
   margin-bottom: 20px;
   text-align: right;
-  background-color: #f9f9f9;
-  border: none;
-  border-bottom: 2px solid #1b5e20;
+  padding: 20px;
   box-sizing: border-box;
+  background-color: #f9f9f9;
+  border-bottom: 2px solid #1b5e20;
 }
 
 .input-group label {
@@ -81,28 +29,4 @@ body {
   font-size: 16px;
   box-sizing: border-box;
   outline: none;
-}
-
-/* زر البحث */
-.input-with-icon {
-  position: relative;
-}
-
-.input-with-icon input {
-  padding-left: 45px;
-}
-
-.search-icon {
-  position: absolute;
-  top: 50%;
-  left: 10px;
-  transform: translateY(-50%);
-  font-size: 28px;
-  color: #1b5e20;
-  cursor: pointer;
-  transition: transform 0.2s ease;
-}
-
-.search-icon:hover {
-  transform: scale(1.15);
 }
