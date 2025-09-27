@@ -22,15 +22,18 @@ body {
   text-align: center;
 }
 
-.title-bar h1 {
-  font-family: 'Arial', sans-serif;
-  color: white;
-  font-size: 40px;
+.title-text h1 {
+  font-size: 34px;
   font-weight: bold;
+  color: white;
   margin: 0;
-  line-height: 1.6;
-  padding: 0 20px;
-  text-align: center;
+}
+
+.title-text h2 {
+  font-size: 20px;
+  font-weight: normal;
+  color: white;
+  margin-top: 10px;
 }
 
 /* البطاقة البيضاء */
@@ -59,7 +62,7 @@ body {
   display: block;
   color: #1b5e20;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 18px;
   margin-bottom: 10px;
 }
 
