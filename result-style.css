@@ -13,6 +13,7 @@ body {
   color: white;
   text-align: center;
   padding: 30px 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 .result-header h1 {
@@ -23,6 +24,7 @@ body {
 .result-header h2 {
   font-size: 18px;
   margin-top: 10px;
+  font-weight: normal;
 }
 
 /* معلومات الطالب */
@@ -30,6 +32,7 @@ body {
   padding: 20px;
   background-color: white;
   border-bottom: 2px solid #1b5e20;
+  box-shadow: inset 0 -1px 0 rgba(0,0,0,0.05);
 }
 
 .student-info p {
@@ -42,6 +45,7 @@ body {
   padding: 20px;
   background-color: #e8f5e9;
   border-bottom: 2px solid #1b5e20;
+  text-align: center;
 }
 
 .score-summary p {
@@ -52,6 +56,7 @@ body {
 .status span.fail {
   color: red;
   font-weight: bold;
+  font-size: 20px;
 }
 
 /* جدول المواد */
@@ -63,6 +68,7 @@ body {
 .subjects-table table {
   width: 100%;
   border-collapse: collapse;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
 .subjects-table th,
@@ -84,4 +90,6 @@ body {
   padding: 20px;
   font-size: 18px;
   color: #388e3c;
+  background-color: #f1f8e9;
+  border-top: 2px solid #c8e6c9;
 }
