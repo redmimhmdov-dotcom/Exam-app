@@ -1,3 +1,4 @@
+/* إعدادات عامة للصفحة */
 body {
   font-family: 'Cairo', sans-serif;
   background-color: #f0f4f8;
@@ -6,42 +7,51 @@ body {
   direction: rtl;
 }
 
+/* الشريط العلوي الأخضر */
 .header-bar {
-  background-color: #1b5e20;
+  background-color: #1b5e20; /* أخضر داكن رسمي */
   padding: 25px;
   text-align: center;
+  margin-bottom: 0;
 }
 
+/* العنوان داخل الشريط */
 .header-bar h1 {
   color: white;
-  font-size: 28px;
+  font-size: 32px; /* يمكنك تغييره لتكبير أو تصغير */
   font-weight: bold;
   margin: 0;
 }
 
+/* البطاقة البيضاء */
 .form-card {
   max-width: 500px;
-  margin: 30px auto;
+  margin: 0 auto 30px;
   background-color: white;
   padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  border-radius: 30px; /* زوايا بيضاوية */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
+  position: relative;
+  z-index: 2;
 }
 
+/* تنسيق كل مجموعة إدخال */
 .input-group {
   margin-bottom: 25px;
   text-align: right;
 }
 
+/* عنوان الحقل */
 .input-group label {
   display: block;
   color: #1b5e20;
   font-weight: bold;
-  font-size: 16px;
+  font-size: 18px;
   margin-bottom: 8px;
 }
 
+/* الحقول نفسها */
 .input-group select,
 .input-group input {
   width: 100%;
@@ -55,20 +65,22 @@ body {
   box-sizing: border-box;
 }
 
+/* حقل رقم الاكتتاب مع زر البحث */
 .input-with-icon {
   position: relative;
 }
 
 .input-with-icon input {
-  padding-left: 45px;
+  padding-left: 45px; /* مساحة للزر على اليسار */
 }
 
+/* زر 🔍 */
 .search-icon {
   position: absolute;
   top: 50%;
   left: 10px;
   transform: translateY(-50%);
-  font-size: 24px;
+  font-size: 28px;
   color: #1b5e20;
   cursor: pointer;
   transition: transform 0.2s ease;
