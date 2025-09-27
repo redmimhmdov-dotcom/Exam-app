@@ -4,19 +4,10 @@
   <meta charset="UTF-8">
   <title>لوحة المعلم</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body { font-family: Arial; background-color: #f0f4f8; padding: 20px; }
-    h2 { color: #1b5e20; }
-    input, select { padding: 10px; margin: 10px 0; width: 100%; font-size: 16px; }
-    button { padding: 10px 20px; font-size: 16px; background-color: #1b5e20; color: white; border: none; border-radius: 6px; }
-    .form-group { margin-bottom: 15px; }
-    table { width: 100%; border-collapse: collapse; margin-top: 20px; font-size: 15px; }
-    th, td { border: 2px solid #1b5e20; padding: 10px; text-align: center; white-space: nowrap; }
-    th { background-color: #c8e6c9; color: #1b5e20; }
-  </style>
+  <link rel="stylesheet" href="admin-style.css">
 </head>
 <body>
-  <h2>📋 إدخال بيانات الطالب</h2>
+  <h2>📝 إدخال بيانات الطالب</h2>
 
   <div class="form-group"><input type="text" id="name" placeholder="الاسم الثلاثي"></div>
   <div class="form-group"><input type="text" id="number" placeholder="رقم الاكتتاب"></div>
@@ -36,21 +27,21 @@
   <script>
     const subjects = {
       "أدبي": [
-        { name: "لغة عربية", max: 400, min: 0 },
-        { name: "لغة إنكليزية", max: 400, min: 0 },
-        { name: "التاريخ", max: 600, min: 0 },
-        { name: "الجغرافيا", max: 600, min: 0 },
-        { name: "الفلسفة", max: 600, min: 0 },
-        { name: "التربية الدينية", max: 200, min: 0 }
+        { name: "لغة عربية", max: 400, min: 160 },
+        { name: "اللغة الإنجليزية", max: 400, min: 160 },
+        { name: "التاريخ", max: 300, min: 120 },
+        { name: "الجغرافيا", max: 300, min: 120 },
+        { name: "الفلسفة والعلوم الإنسانية", max: 300, min: 120 },
+        { name: "التربية الإسلامية", max: 200, min: 80 }
       ],
       "علمي": [
-        { name: "لغة عربية", max: 400, min: 0 },
-        { name: "لغة إنكليزية", max: 400, min: 0 },
-        { name: "الرياضيات", max: 600, min: 0 },
-        { name: "الفيزياء", max: 600, min: 0 },
-        { name: "الكيمياء", max: 600, min: 0 },
-        { name: "العلوم", max: 600, min: 0 },
-        { name: "التربية الدينية", max: 200, min: 0 }
+        { name: "لغة عربية", max: 400, min: 160 },
+        { name: "اللغة الإنجليزية", max: 400, min: 160 },
+        { name: "الرياضيات", max: 600, min: 240 },
+        { name: "الفيزياء", max: 300, min: 120 },
+        { name: "الكيمياء", max: 300, min: 120 },
+        { name: "العلوم", max: 300, min: 120 },
+        { name: "التربية الإسلامية", max: 200, min: 80 }
       ]
     };
 
@@ -61,12 +52,13 @@
 
       if (!branch || !subjects[branch]) return;
 
-      let html = `<table><thead><tr><th>المادة</th><th>الدرجة</th><th>العظمى / الدنيا</th></tr></thead><tbody>`;
+      let html = `<table><thead><tr><th>المادة</th><th>الدرجة</th><th>العظمى</th><th>الدنيا</th></tr></thead><tbody>`;
       subjects[branch].forEach((subj, i) => {
         html += `<tr>
           <td>${subj.name}</td>
           <td><input type="number" id="mark_${i}" placeholder="الدرجة" style="width:80px;"></td>
-          <td>${subj.max} / ${subj.min}</td>
+          <td>${subj.max}</td>
+          <td>${subj.min}</td>
         </tr>`;
       });
       html += `</tbody></table>`;
