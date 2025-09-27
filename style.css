@@ -1,4 +1,4 @@
-/* إعدادات عامة للصفحة */
+/* إعدادات عامة */
 body {
   font-family: 'Cairo', sans-serif;
   margin: 0;
@@ -11,22 +11,20 @@ body {
   overflow: hidden;
 }
 
-/* الخلفية الخضراء العلوية */
+/* الخلفية الخضراء */
 .title-bar {
-  background-color: #1b5e20; /* أخضر رسمي */
+  background-color: #1b5e20;
   width: 100vw;
   height: 35vh;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  position: relative;
-  z-index: 2;
 }
 
 .title-bar h1 {
   color: white;
-  font-size: 34px;
+  font-size: 32px;
   font-weight: bold;
   margin: 0;
   line-height: 1.6;
@@ -35,14 +33,10 @@ body {
 
 /* البطاقة البيضاء */
 .form-card {
-  position: relative;
-  z-index: 1;
-  flex-grow: 1;
   background-color: white;
-  margin-top: -1px; /* دمج مباشر مع الخلفية */
-  padding: 40px 0;
+  flex-grow: 1;
+  padding: 30px 0;
   box-sizing: border-box;
-  box-shadow: 0 -4px 20px rgba(0,0,0,0.05);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -50,13 +44,12 @@ body {
 
 /* الحقول */
 .input-group {
-  width: 100vw; /* عرض كامل للشاشة */
+  width: 100vw;
   padding: 20px;
   margin-bottom: 20px;
-  text-align: right;
+  background-color: #f9f9f9;
+  border-bottom: 2px solid #1b5e20;
   box-sizing: border-box;
-  background-color: #f9f9f9; /* خلفية ناعمة */
-  border-bottom: 2px solid #1b5e20; /* خط سفلي رسمي */
 }
 
 .input-group label {
@@ -81,26 +74,26 @@ body {
   outline: none;
 }
 
-/* حقل رقم الاكتتاب مع زر البحث */
-.input-with-icon {
-  position: relative;
+/* زر البحث */
+.search-button {
+  width: 100vw;
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: center;
 }
 
-.input-with-icon input {
-  padding-left: 45px;
-}
-
-.search-icon {
-  position: absolute;
-  top: 50%;
-  left: 10px;
-  transform: translateY(-50%);
-  font-size: 28px;
-  color: #1b5e20;
+.search-button button {
+  background-color: #1b5e20;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 8px;
   cursor: pointer;
-  transition: transform 0.2s ease;
+  transition: background-color 0.3s ease;
 }
 
-.search-icon:hover {
-  transform: scale(1.15);
+.search-button button:hover {
+  background-color: #145a16;
 }
