@@ -79,13 +79,13 @@ body {
 
 /* المكبرة داخل حقل رقم الاكتتاب */
 .input-with-icon input {
-  padding-right: 40px;
+  padding-right: 50px;
 }
 
 .search-icon {
   position: absolute;
-  top: 40%;
-  right: 15px;
+  top: 50%;
+  right: 20px;
   transform: translateY(-50%);
   font-size: 30px;
   color: #1b5e20;
