@@ -4,72 +4,16 @@
   <meta charset="UTF-8">
   <title>استعلام النتيجة</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body {
-      font-family: Arial;
-      background-color: #f0f4f8;
-      padding: 20px;
-      direction: rtl;
-    }
-    h2 {
-      color: #1b5e20;
-      text-align: center;
-    }
-    input, select {
-      padding: 10px;
-      margin: 10px 0;
-      width: 100%;
-      font-size: 16px;
-    }
-    button {
-      padding: 10px 20px;
-      font-size: 16px;
-      background-color: #1b5e20;
-      color: white;
-      border: none;
-      border-radius: 6px;
-      display: block;
-      margin: 20px auto;
-    }
-    .result-card {
-      background-color: white;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-      margin-top: 30px;
-      position: relative;
-    }
-    .result-card h3 {
-      margin: 0 0 10px;
-      color: #388e3c;
-    }
-    .result-card p {
-      margin: 5px 0;
-      font-size: 16px;
-    }
-    .zoom-icon {
-      position: absolute;
-      top: 10px;
-      left: 10px;
-      font-size: 24px;
-      cursor: pointer;
-      color: #1b5e20;
-    }
-  </style>
 </head>
 <body>
-  <h2>🔍 استعلام النتيجة</h2>
-
+  <h2>🔍 استعلام عن النتيجة</h2>
   <input type="text" id="number" placeholder="رقم الاكتتاب">
   <select id="branch">
     <option value="">اختر الفرع</option>
     <option value="أدبي">أدبي</option>
     <option value="علمي">علمي</option>
   </select>
-
   <button onclick="search()">استعلام</button>
-
-  <div id="result-area"></div>
 
   <script>
     function search() {
@@ -77,36 +21,9 @@
       const branch = document.getElementById("branch").value;
       const key = "student_" + number + "_" + branch + "_2025";
       const data = JSON.parse(localStorage.getItem(key));
-      const area = document.getElementById("result-area");
-      area.innerHTML = "";
-
-      if (!data) {
-        alert("❌ لا توجد نتيجة مطابقة");
-        return;
-      }
+      if (!data) return alert("❌ لا توجد نتيجة مطابقة");
 
       localStorage.setItem("activeStudent", JSON.stringify(data));
-
-      let total = 0;
-      for (const subject in data.marks) {
-        total += data.marks[subject].value;
-      }
-
-      area.innerHTML = `
-        <div class="result-card">
-          <span class="zoom-icon" onclick="goToResult()">🔎</span>
-          <h3>📘 نتيجة الطالب</h3>
-          <p><strong>الاسم:</strong> ${data.name}</p>
-          <p><strong>الفرع:</strong> ${data.branch}</p>
-          <p><strong>المحافظة:</strong> الحسكة</p>
-          <p><strong>العام:</strong> 2025</p>
-          <p><strong>المجموع:</strong> ${total}</p>
-          <p><em>اضغط على 🔎 لعرض التفاصيل الكاملة</em></p>
-        </div>
-      `;
-    }
-
-    function goToResult() {
       window.location.href = "result.html";
     }
   </script>
