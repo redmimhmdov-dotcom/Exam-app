@@ -1,4 +1,4 @@
-/* إعدادات عامة */
+/* إعدادات عامة للصفحة */
 body {
   font-family: 'Cairo', sans-serif;
   margin: 0;
@@ -11,9 +11,9 @@ body {
   overflow: hidden;
 }
 
-/* الخلفية الخضراء */
+/* الخلفية الخضراء العلوية */
 .title-bar {
-  background-color: #1b5e20;
+  background-color: #1b5e20; /* أخضر رسمي */
   width: 100vw;
   height: 35vh;
   display: flex;
@@ -39,7 +39,7 @@ body {
   z-index: 1;
   flex-grow: 1;
   background-color: white;
-  margin-top: -1px;
+  margin-top: -1px; /* دمج مباشر مع الخلفية */
   padding: 40px 0;
   box-sizing: border-box;
   box-shadow: 0 -4px 20px rgba(0,0,0,0.05);
@@ -50,13 +50,13 @@ body {
 
 /* الحقول */
 .input-group {
-  width: 100vw;
+  width: 100vw; /* عرض كامل للشاشة */
   padding: 20px;
   margin-bottom: 20px;
   text-align: right;
   box-sizing: border-box;
-  background-color: #f9f9f9;
-  border-bottom: 2px solid #1b5e20;
+  background-color: #f9f9f9; /* خلفية ناعمة */
+  border-bottom: 2px solid #1b5e20; /* خط سفلي رسمي */
 }
 
 .input-group label {
@@ -81,7 +81,7 @@ body {
   outline: none;
 }
 
-/* زر البحث */
+/* حقل رقم الاكتتاب مع زر البحث */
 .input-with-icon {
   position: relative;
 }
