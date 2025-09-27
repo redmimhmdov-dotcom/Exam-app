@@ -4,24 +4,17 @@
   <meta charset="UTF-8">
   <title>لوحة المعلم</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="admin-style.css">
 </head>
 <body>
   <h2>📝 إدخال بيانات الطالب</h2>
-
-  <div class="form-group"><input type="text" id="name" placeholder="الاسم الثلاثي"></div>
-  <div class="form-group"><input type="text" id="number" placeholder="رقم الاكتتاب"></div>
-
-  <div class="form-group">
-    <select id="branch" onchange="renderSubjects()">
-      <option value="">اختر الفرع</option>
-      <option value="أدبي">أدبي</option>
-      <option value="علمي">علمي</option>
-    </select>
-  </div>
-
+  <input type="text" id="name" placeholder="الاسم الثلاثي">
+  <input type="text" id="number" placeholder="رقم الاكتتاب">
+  <select id="branch" onchange="renderSubjects()">
+    <option value="">اختر الفرع</option>
+    <option value="أدبي">أدبي</option>
+    <option value="علمي">علمي</option>
+  </select>
   <div id="subjects-area"></div>
-
   <button onclick="saveStudent()">💾 حفظ البيانات</button>
 
   <script>
@@ -49,19 +42,18 @@
       const branch = document.getElementById("branch").value;
       const area = document.getElementById("subjects-area");
       area.innerHTML = "";
-
       if (!branch || !subjects[branch]) return;
 
-      let html = `<table><thead><tr><th>المادة</th><th>الدرجة</th><th>العظمى</th><th>الدنيا</th></tr></thead><tbody>`;
+      let html = `<table><tr><th>المادة</th><th>الدرجة</th><th>العظمى</th><th>الدنيا</th></tr>`;
       subjects[branch].forEach((subj, i) => {
         html += `<tr>
           <td>${subj.name}</td>
-          <td><input type="number" id="mark_${i}" placeholder="الدرجة" style="width:80px;"></td>
+          <td><input type="number" id="mark_${i}" placeholder="الدرجة"></td>
           <td>${subj.max}</td>
           <td>${subj.min}</td>
         </tr>`;
       });
-      html += `</tbody></table>`;
+      html += `</table>`;
       area.innerHTML = html;
     }
 
@@ -69,11 +61,7 @@
       const name = document.getElementById("name").value.trim();
       const number = document.getElementById("number").value.trim();
       const branch = document.getElementById("branch").value;
-
-      if (!name || !number || !branch) {
-        alert("يرجى تعبئة جميع الحقول");
-        return;
-      }
+      if (!name || !number || !branch) return alert("يرجى تعبئة جميع الحقول");
 
       const marks = {};
       subjects[branch].forEach((subj, i) => {
