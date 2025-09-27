@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>لوحة المعلم</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body { font-family: Arial; background-color: #f0f4f8; padding: 20px; }
+    h2 { color: #1b5e20; }
+    input, select { padding: 10px; margin: 10px 0; width: 100%; font-size: 16px; }
+    button { padding: 10px 20px; font-size: 16px; background-color: #1b5e20; color: white; border: none; border-radius: 6px; }
+    .form-group { margin-bottom: 15px; }
+  </style>
+</head>
+<body>
+  <h2>📋 إدخال بيانات الطالب</h2>
+  <div class="form-group"><input type="text" id="name" placeholder="الاسم الثلاثي"></div>
+  <div class="form-group"><input type="text" id="number" placeholder="رقم الاكتتاب"></div>
+  <div class="form-group">
+    <select id="branch">
+      <option value="أدبي">أدبي</option>
+      <option value="علمي">علمي</option>
+    </select>
+  </div>
+  <div class="form-group"><input type="text" id="governorate" placeholder="المحافظة"></div>
+  <div class="form-group"><input type="text" id="year" placeholder="العام الدراسي"></div>
+
+  <h3>📊 العلامات</h3>
+  <div class="form-group"><input type="number" id="arabic" placeholder="لغة عربية"></div>
+  <div class="form-group"><input type="number" id="english" placeholder="لغة إنكليزية"></div>
+  <div class="form-group"><input type="number" id="subject1" placeholder="مادة 1"></div>
+  <div class="form-group"><input type="number" id="subject2" placeholder="مادة 2"></div>
+  <div class="form-group"><input type="number" id="subject3" placeholder="مادة 3"></div>
+  <div class="form-group"><input type="number" id="religion" placeholder="تربية دينية"></div>
+
+  <button onclick="saveData()">حفظ البيانات</button>
+
+  <script>
+    function saveData() {
+      const student = {
+        name: document.getElementById('name').value,
+        number: document.getElementById('number').value,
+        branch: document.getElementById('branch').value,
+        governorate: document.getElementById('governorate').value,
+        year: document.getElementById('year').value,
+        marks: {
+          arabic: +document.getElementById('arabic').value,
+          english: +document.getElementById('english').value,
+          subject1: +document.getElementById('subject1').value,
+          subject2: +document.getElementById('subject2').value,
+          subject3: +document.getElementById('subject3').value,
+          religion: +document.getElementById('religion').value
+        }
+      };
+      localStorage.setItem("student_" + student.number + "_" + student.year, JSON.stringify(student));
+      alert("✅ تم حفظ البيانات بنجاح");
+    }
+  </script>
+</body>
+</html>
