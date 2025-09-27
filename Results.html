@@ -2,88 +2,52 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
-  <title>النتيجة الرسمية</title>
-  <link rel="manifest" href="manifest.json">
-  <link rel="stylesheet" href="style.css">
+  <title>نتيجة الطالب</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="result-style.css">
 </head>
 <body>
-  <div class="result-card">
-    <img src="logo-green.png" alt="شعار وزارة التربية" class="logo">
-    <h1>وزارة التربية السورية</h1>
-    <h2>نتيجة امتحان الشهادة الثانوية العامة</h2>
-
-    <div class="student-info">
-      <p><strong>الاسم:</strong> <span id="studentName"></span></p>
-      <p><strong>رقم الاكتتاب:</strong> <span id="studentNumber"></span></p>
-      <p><strong>الفرع:</strong> <span id="studentBranch"></span></p>
-    </div>
-
-    <table id="marksTable">
-      <tr>
-        <th>المادة</th>
-        <th>الدرجة</th>
-        <th>العظمى</th>
-        <th>الدنيا</th>
-        <th>الحالة</th>
-      </tr>
-    </table>
-
-    <div class="final-status">
-      <p><strong>المجموع:</strong> <span id="totalScore"></span></p>
-      <p><strong>الحالة النهائية:</strong> <span id="finalStatus"></span></p>
-    </div>
+  <div class="result-header">
+    <h1>نتيجة الثانوية العامة</h1>
+    <h2>فرع الأدبي - منهاج دمشق</h2>
   </div>
 
-  <script>
-    const data = JSON.parse(localStorage.getItem('studentData'));
-    const subjects = {
-      scientific: {
-        "الرياضيات": 120,
-        "الفيزياء": 100,
-        "الكيمياء": 100,
-        "العلوم": 80,
-        "اللغة العربية": 100,
-        "اللغة الإنجليزية": 100
-      },
-      literary: {
-        "الفلسفة": 100,
-        "التاريخ": 100,
-        "الجغرافيا": 100,
-        "اللغة العربية": 100,
-        "اللغة الفرنسية": 100,
-        "اللغة الإنجليزية": 100
-      }
-    };
+  <div class="student-info">
+    <p><strong>رقم الاكتتاب:</strong> 1773960</p>
+    <p><strong>المدرسة:</strong> ------</p>
+    <p><strong>المحافظة:</strong> ريف دمشق</p>
+    <p><strong>المركز:</strong> دوما الجنوبي</p>
+    <p><strong>القاعة:</strong> A102</p>
+    <p><strong>رقم الجلوس:</strong> 5</p>
+  </div>
 
-    const minPass = 40;
-    const branch = data.branch;
-    const marks = data.marks;
-    const maxMarks = subjects[branch];
-    let total = 0;
-    let passed = true;
+  <div class="score-summary">
+    <p><strong>المجموع:</strong> 1384 / <span>2600</span></p>
+    <p class="status">النتيجة: <span class="fail">راسب</span></p>
+  </div>
 
-    document.getElementById('studentName').textContent = data.name;
-    document.getElementById('studentNumber').textContent = data.number;
-    document.getElementById('studentBranch').textContent = branch === 'scientific' ? 'علمي' : 'أدبي';
+  <div class="subjects-table">
+    <table>
+      <thead>
+        <tr>
+          <th>المادة</th>
+          <th>العلامة</th>
+          <th>العلامة العظمى</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>لغة عربية</td><td>84</td><td>400</td></tr>
+        <tr><td>لغة إنكليزية</td><td>200</td><td>400</td></tr>
+        <tr><td>التاريخ</td><td>160</td><td>600</td></tr>
+        <tr><td>الجغرافيا</td><td>160</td><td>600</td></tr>
+        <tr><td>الفلسفة</td><td>160</td><td>600</td></tr>
+        <tr><td>التربية الدينية</td><td>120</td><td>200</td></tr>
+      </tbody>
+    </table>
+  </div>
 
-    const table = document.getElementById('marksTable');
-
-    for (let subject in maxMarks) {
-      const score = marks[subject] || 0;
-      const max = maxMarks[subject];
-      const status = score >= minPass ? "✅" : "❌";
-      if (score < minPass) passed = false;
-      total += score;
-
-      const row = `<tr>
-        <td>${subject}</td>
-        <td>${score}</td>
-        <td>${max}</td>
-        <td>${minPass}</td>
-        <td>${status}</td>
-      </tr>`;
-      table.innerHTML += row;
-    }
-
-    document.getElementById('totalScore').textContent = total;
-    document.get
+  <div class="note">
+    <p>لا تيأس، أمامك فرصة أخرى 🌱</p>
+  </div>
+</body>
+</html>
