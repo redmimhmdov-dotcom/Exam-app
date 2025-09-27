@@ -7,31 +7,32 @@
   <link rel="stylesheet" href="result-style.css">
 </head>
 <body>
-  <div class="result-header">
-    <h1>نتائج الثانوية العامة</h1>
+  <div class="app-header">
+    <h1>📘 نتيجة الثانوية العامة</h1>
     <h2>فرع الأدبي - منهاج دمشق</h2>
   </div>
 
-  <div class="student-info">
-    <p><strong>الاسم الثلاثي:</strong> محمد أحمد العلي</p>
+  <div class="card">
+    <h3>👤 الاسم الثلاثي</h3>
+    <p>محمد أحمد العلي</p>
+  </div>
+
+  <div class="card">
+    <h3>📄 معلومات الطالب</h3>
     <p><strong>رقم الاكتتاب:</strong> 1773960</p>
     <p><strong>المحافظة:</strong> ريف دمشق</p>
     <p><strong>المركز:</strong> دوما الجنوبي</p>
     <p><strong>رقم الجلوس:</strong> 5</p>
   </div>
 
-  <div class="score-summary">
-    <p><strong>المجموع:</strong> 1384 / <span>2600</span></p>
-    <p class="status">النتيجة: <span class="fail">راسب</span></p>
-  </div>
-
-  <div class="subjects-table">
+  <div class="card">
+    <h3>📊 العلامات</h3>
     <table>
       <thead>
         <tr>
           <th>المادة</th>
           <th>العلامة</th>
-          <th>العلامة العظمى</th>
+          <th>العظمى</th>
         </tr>
       </thead>
       <tbody>
@@ -45,8 +46,11 @@
     </table>
   </div>
 
-  <div class="note">
-    <p>لا تيأس، أمامك فرصة أخرى 🌱</p>
+  <div class="card result-card">
+    <h3>📌 النتيجة</h3>
+    <p><strong>المجموع:</strong> 1384 / 2600</p>
+    <p class="status fail">راسب ❌</p>
+    <p class="note">لا تيأس، أمامك فرصة أخرى 🌱</p>
   </div>
 </body>
 </html>
