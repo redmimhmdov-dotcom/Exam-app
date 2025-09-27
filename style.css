@@ -9,31 +9,31 @@ body {
 
 /* البطاقة البيضاء */
 .form-card {
-  width: 100%;
-  min-height: 100vh;
-  margin: 0;
-  padding: 0 20px 40px;
+  max-width: 500px;
+  margin: 30px auto;
   background-color: white;
+  padding: 30px 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
   box-sizing: border-box;
   position: relative;
-  z-index: 0;
+  z-index: 1;
 }
 
-/* الشريط الأخضر البيضوي */
+/* الشريط الأخضر */
 .title-bar {
   background-color: #1b5e20;
-  padding: 40px 20px 120px; /* زيادة في الأسفل لتوسيع الخلفية */
+  padding: 25px 20px;
   text-align: center;
-  border-bottom-left-radius: 120px;
-  border-bottom-right-radius: 120px;
-  margin-bottom: -100px; /* دمج أعمق مع البطاقة البيضاء */
-  z-index: 1;
-  position: relative;
+  border-radius: 0;
+  margin-bottom: 0;
+  width: 100%;
 }
 
+/* العنوان داخل الشريط */
 .title-bar h1 {
   color: white;
-  font-size: 34px;
+  font-size: 32px;
   font-weight: bold;
   margin: 0;
   line-height: 1.4;
@@ -43,7 +43,6 @@ body {
 .input-group {
   margin-bottom: 20px;
   text-align: right;
-  padding-top: 60px; /* بداية الحقول بعد الانحناء مباشرة */
 }
 
 .input-group label {
