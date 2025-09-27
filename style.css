@@ -25,7 +25,7 @@ body {
 .title-bar h1 {
   font-family: 'Arial', sans-serif;
   color: white;
-  font-size: 36px;
+  font-size: 40px;
   font-weight: bold;
   margin: 0;
   line-height: 1.6;
@@ -59,7 +59,7 @@ body {
   display: block;
   color: #1b5e20;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 20px;
   margin-bottom: 10px;
 }
 
@@ -79,13 +79,13 @@ body {
 
 /* المكبرة داخل حقل رقم الاكتتاب */
 .input-with-icon input {
-  padding-right: 50px;
+  padding-right: 40px;
 }
 
 .search-icon {
   position: absolute;
-  top: 50%;
-  right: 20px;
+  top: 40%;
+  right: 15px;
   transform: translateY(-50%);
   font-size: 30px;
   color: #1b5e20;
