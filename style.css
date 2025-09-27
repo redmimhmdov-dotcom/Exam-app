@@ -18,7 +18,7 @@ body {
 /* العنوان داخل الشريط */
 .header-bar h1 {
   color: white;
-  font-size: 32px; /* يمكنك تغييره لتكبير أو تصغير */
+  font-size: 36px; /* يمكنك تغييره لتكبير أو تصغير */
   font-weight: bold;
   margin: 0;
 }
@@ -47,7 +47,7 @@ body {
   display: block;
   color: #1b5e20;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 20px;
   margin-bottom: 8px;
 }
 
@@ -61,7 +61,7 @@ body {
   background-color: white;
   color: #1b5e20;
   font-weight: bold;
-  font-size: 16px;
+  font-size: 20px;
   box-sizing: border-box;
 }
 
@@ -80,7 +80,7 @@ body {
   top: 50%;
   left: 10px;
   transform: translateY(-50%);
-  font-size: 28px;
+  font-size: 32px;
   color: #1b5e20;
   cursor: pointer;
   transition: transform 0.2s ease;
