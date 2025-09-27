@@ -2,28 +2,106 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
-  <title>دخول المعلم</title>
+  <title>لوحة المعلم</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    body { font-family: Arial; background-color: #f0f4f8; text-align: center; padding: 50px; }
-    input { padding: 10px; margin: 10px; width: 250px; font-size: 16px; }
+    body { font-family: Arial; background-color: #f0f4f8; padding: 20px; }
+    h2 { color: #1b5e20; }
+    input, select { padding: 10px; margin: 10px 0; width: 100%; font-size: 16px; }
     button { padding: 10px 20px; font-size: 16px; background-color: #1b5e20; color: white; border: none; border-radius: 6px; }
+    .form-group { margin-bottom: 15px; }
+    table { width: 100%; border-collapse: collapse; margin-top: 20px; font-size: 15px; }
+    th, td { border: 2px solid #1b5e20; padding: 10px; text-align: center; }
+    th { background-color: #c8e6c9; color: #1b5e20; }
   </style>
 </head>
 <body>
-  <h2>🔐 دخول المعلم</h2>
-  <input type="password" id="password" placeholder="أدخل كلمة المرور">
-  <br>
-  <button onclick="login()">دخول</button>
+  <h2>📋 إدخال بيانات الطالب</h2>
+
+  <div class="form-group"><input type="text" id="name" placeholder="الاسم الثلاثي"></div>
+  <div class="form-group"><input type="text" id="number" placeholder="رقم الاكتتاب"></div>
+  <div class="form-group"><input type="text" id="governorate" placeholder="المحافظة"></div>
+  <div class="form-group"><input type="text" id="year" placeholder="العام الدراسي"></div>
+
+  <div class="form-group">
+    <select id="branch" onchange="renderSubjects()">
+      <option value="">اختر الفرع</option>
+      <option value="أدبي">أدبي</option>
+      <option value="علمي">علمي</option>
+    </select>
+  </div>
+
+  <div id="subjects-area"></div>
+
+  <button onclick="saveStudent()">💾 حفظ البيانات</button>
 
   <script>
-    function login() {
-      const pass = document.getElementById('password').value;
-      if (pass === "admin123") {
-        window.location.href = "teacher-panel.html";
-      } else {
-        alert("كلمة المرور غير صحيحة");
+    const subjects = {
+      "أدبي": [
+        { name: "لغة عربية", max: 400, min: 0 },
+        { name: "لغة إنكليزية", max: 400, min: 0 },
+        { name: "التاريخ", max: 600, min: 0 },
+        { name: "الجغرافيا", max: 600, min: 0 },
+        { name: "الفلسفة", max: 600, min: 0 },
+        { name: "التربية الدينية", max: 200, min: 0 }
+      ],
+      "علمي": [
+        { name: "لغة عربية", max: 400, min: 0 },
+        { name: "لغة إنكليزية", max: 400, min: 0 },
+        { name: "الرياضيات", max: 600, min: 0 },
+        { name: "الفيزياء", max: 600, min: 0 },
+        { name: "الكيمياء", max: 600, min: 0 },
+        { name: "العلوم", max: 600, min: 0 },
+        { name: "التربية الدينية", max: 200, min: 0 }
+      ]
+    };
+
+    function renderSubjects() {
+      const branch = document.getElementById("branch").value;
+      const area = document.getElementById("subjects-area");
+      area.innerHTML = "";
+
+      if (!branch || !subjects[branch]) return;
+
+      let html = `<table><thead><tr><th>المادة</th><th>الدرجة</th><th>العظمى / الدنيا</th></tr></thead><tbody>`;
+      subjects[branch].forEach((subj, i) => {
+        html += `<tr>
+          <td>${subj.name}</td>
+          <td><input type="number" id="mark_${i}" placeholder="الدرجة" style="width:80px;"></td>
+          <td>${subj.min} / ${subj.max}</td>
+        </tr>`;
+      });
+      html += `</tbody></table>`;
+      area.innerHTML = html;
+    }
+
+    function saveStudent() {
+      const name = document.getElementById("name").value;
+      const number = document.getElementById("number").value;
+      const governorate = document.getElementById("governorate").value;
+      const year = document.getElementById("year").value;
+      const branch = document.getElementById("branch").value;
+
+      if (!name || !number || !year || !branch) {
+        alert("يرجى تعبئة جميع الحقول");
+        return;
       }
+
+      const marks = {};
+      subjects[branch].forEach((subj, i) => {
+        marks[subj.name] = {
+          value: +document.getElementById("mark_" + i).value,
+          max: subj.max,
+          min: subj.min
+        };
+      });
+
+      const student = {
+        name, number, governorate, year, branch, marks
+      };
+
+      localStorage.setItem("student_" + number + "_" + year, JSON.stringify(student));
+      alert("✅ تم حفظ بيانات الطالب بنجاح");
     }
   </script>
 </body>
