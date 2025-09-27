@@ -23,12 +23,14 @@ body {
 }
 
 .title-bar h1 {
+  font-family: 'Amiri', serif;
   color: white;
-  font-size: 32px;
+  font-size: 36px;
   font-weight: bold;
   margin: 0;
   line-height: 1.6;
   padding: 0 20px;
+  text-align: center;
 }
 
 /* البطاقة البيضاء */
@@ -75,21 +77,22 @@ body {
   outline: none;
 }
 
-/* أيقونة البحث داخل حقل رقم الاكتتاب */
+/* المكبرة داخل حقل رقم الاكتتاب */
 .input-with-icon input {
   padding-left: 50px;
 }
 
 .search-icon {
   position: absolute;
-  bottom: 20px;
-  left: 25px;
-  font-size: 28px;
+  top: 50%;
+  left: 15px;
+  transform: translateY(-50%);
+  font-size: 32px;
   color: #1b5e20;
   cursor: pointer;
   transition: transform 0.2s ease;
 }
 
 .search-icon:hover {
-  transform: scale(1.15);
+  transform: scale(1.2);
 }
