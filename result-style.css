@@ -61,17 +61,21 @@ body {
   width: 100%;
   border-collapse: collapse;
   margin-top: 10px;
-  font-size: 17px;
+  font-size: 16px;
 }
 .marks-table th, .marks-table td {
   border: 1px solid #ccc;
-  padding: 14px;
+  padding: 12px;
   text-align: center;
 }
 .marks-table th {
-  background-color: #c8e6c9;
-  color: #1b5e20;
+  background-color: #e0f2f1;
+  color: #00695c;
   font-weight: bold;
+}
+.marks-table td {
+  background-color: #fff;
+  color: #333;
 }
 
 /* شبكة النتيجة */
