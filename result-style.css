@@ -57,20 +57,21 @@ body {
 }
 
 /* جدول العلامات */
-table {
+.marks-table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 10px;
+  font-size: 17px;
 }
-th, td {
-  border: 1px solid #ddd;
-  padding: 10px;
+.marks-table th, .marks-table td {
+  border: 1px solid #ccc;
+  padding: 14px;
   text-align: center;
-  font-size: 15px;
 }
-th {
-  background-color: #e0f2f1;
-  color: #00695c;
+.marks-table th {
+  background-color: #c8e6c9;
+  color: #1b5e20;
+  font-weight: bold;
 }
 
 /* شبكة النتيجة */
