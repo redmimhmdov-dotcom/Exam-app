@@ -1,59 +1,61 @@
 /* إعدادات عامة */
 body {
   font-family: 'Cairo', sans-serif;
-  background-color: #f0f4f8;
   margin: 0;
   padding: 0;
   direction: rtl;
   height: 100vh;
+  background-color: #f0f4f8;
   display: flex;
   flex-direction: column;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
-/* الشريط الأخضر يغطي الأعلى بالكامل */
+/* الشريط الأخضر */
 .title-bar {
   background-color: #1b5e20;
-  width: 100vw; /* يغطي كامل العرض */
-  height: 40vh; /* يغطي جزء كبير من الأعلى */
+  width: 100vw;
+  height: 45vh;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  border-bottom-left-radius: 60px;
-  border-bottom-right-radius: 60px;
-  flex-shrink: 0;
-  overflow: hidden;
+  border-bottom-left-radius: 80px;
+  border-bottom-right-radius: 80px;
   position: relative;
+  z-index: 2;
 }
 
-/* العنوان داخل الشريط */
 .title-bar h1 {
   color: white;
-  font-size: 34px;
+  font-size: 36px;
   font-weight: bold;
   margin: 0;
   line-height: 1.4;
   padding: 0 20px;
-  text-align: center;
 }
 
 /* البطاقة البيضاء */
 .form-card {
+  position: relative;
+  z-index: 1;
   flex-grow: 1;
   background-color: white;
-  padding: 40px 20px;
-  box-sizing: border-box;
+  margin-top: -60px;
+  padding: 60px 20px 40px;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
-  box-shadow: 0 -4px 15px rgba(0,0,0,0.05);
-  margin-top: -40px;
-  z-index: 1;
-  position: relative;
+  box-shadow: 0 -4px 20px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 /* الحقول */
 .input-group {
+  width: 100%;
+  max-width: 400px;
   margin-bottom: 20px;
   text-align: right;
 }
