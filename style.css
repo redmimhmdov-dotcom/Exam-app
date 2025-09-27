@@ -84,10 +84,10 @@ body {
 
 .search-icon {
   position: absolute;
-  top: 50%;
+  top: 45%;
   left: 20px;
   transform: translateY(-50%);
-  font-size: 30px;
+  font-size: 35px;
   color: #1b5e20;
   cursor: pointer;
   transition: transform 0.2s ease;
