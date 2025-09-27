@@ -22,19 +22,18 @@ body {
 /* الشريط الأخضر البيضوي */
 .title-bar {
   background-color: #1b5e20;
-  padding: 30px 20px 60px; /* انحناء أقل لتقليل التباعد */
+  padding: 40px 20px 120px; /* زيادة في الأسفل لتوسيع الخلفية */
   text-align: center;
-  border-bottom-left-radius: 60px;
-  border-bottom-right-radius: 60px;
-  margin-bottom: -40px; /* دمج أنيق مع البطاقة */
+  border-bottom-left-radius: 120px;
+  border-bottom-right-radius: 120px;
+  margin-bottom: -100px; /* دمج أعمق مع البطاقة البيضاء */
   z-index: 1;
   position: relative;
 }
 
-/* العنوان داخل الشريط */
 .title-bar h1 {
   color: white;
-  font-size: 30px;
+  font-size: 34px;
   font-weight: bold;
   margin: 0;
   line-height: 1.4;
