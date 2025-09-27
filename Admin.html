@@ -11,7 +11,7 @@
     button { padding: 10px 20px; font-size: 16px; background-color: #1b5e20; color: white; border: none; border-radius: 6px; }
     .form-group { margin-bottom: 15px; }
     table { width: 100%; border-collapse: collapse; margin-top: 20px; font-size: 15px; }
-    th, td { border: 2px solid #1b5e20; padding: 10px; text-align: center; }
+    th, td { border: 2px solid #1b5e20; padding: 10px; text-align: center; white-space: nowrap; }
     th { background-color: #c8e6c9; color: #1b5e20; }
   </style>
 </head>
@@ -20,8 +20,6 @@
 
   <div class="form-group"><input type="text" id="name" placeholder="الاسم الثلاثي"></div>
   <div class="form-group"><input type="text" id="number" placeholder="رقم الاكتتاب"></div>
-  <div class="form-group"><input type="text" id="governorate" placeholder="المحافظة"></div>
-  <div class="form-group"><input type="text" id="year" placeholder="العام الدراسي"></div>
 
   <div class="form-group">
     <select id="branch" onchange="renderSubjects()">
@@ -68,7 +66,7 @@
         html += `<tr>
           <td>${subj.name}</td>
           <td><input type="number" id="mark_${i}" placeholder="الدرجة" style="width:80px;"></td>
-          <td>${subj.min} / ${subj.max}</td>
+          <td>${subj.max} / ${subj.min}</td>
         </tr>`;
       });
       html += `</tbody></table>`;
@@ -76,13 +74,11 @@
     }
 
     function saveStudent() {
-      const name = document.getElementById("name").value;
-      const number = document.getElementById("number").value;
-      const governorate = document.getElementById("governorate").value;
-      const year = document.getElementById("year").value;
+      const name = document.getElementById("name").value.trim();
+      const number = document.getElementById("number").value.trim();
       const branch = document.getElementById("branch").value;
 
-      if (!name || !number || !year || !branch) {
+      if (!name || !number || !branch) {
         alert("يرجى تعبئة جميع الحقول");
         return;
       }
@@ -97,10 +93,16 @@
       });
 
       const student = {
-        name, number, governorate, year, branch, marks
+        name,
+        number,
+        branch,
+        governorate: "الحسكة",
+        year: "2025",
+        marks
       };
 
-      localStorage.setItem("student_" + number + "_" + year, JSON.stringify(student));
+      const key = "student_" + number + "_" + branch + "_2025";
+      localStorage.setItem(key, JSON.stringify(student));
       alert("✅ تم حفظ بيانات الطالب بنجاح");
     }
   </script>
