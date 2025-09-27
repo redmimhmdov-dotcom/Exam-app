@@ -22,11 +22,11 @@ body {
 /* الشريط الأخضر البيضوي */
 .title-bar {
   background-color: #1b5e20;
-  padding: 40px 20px 100px; /* زيادة في الأسفل لتكوين الانحناء */
+  padding: 30px 20px 60px; /* انحناء أقل لتقليل التباعد */
   text-align: center;
-  border-bottom-left-radius: 100px;
-  border-bottom-right-radius: 100px;
-  margin-bottom: -80px; /* يدمج الحد السفلي مع البطاقة البيضاء */
+  border-bottom-left-radius: 60px;
+  border-bottom-right-radius: 60px;
+  margin-bottom: -40px; /* دمج أنيق مع البطاقة */
   z-index: 1;
   position: relative;
 }
@@ -34,36 +34,37 @@ body {
 /* العنوان داخل الشريط */
 .title-bar h1 {
   color: white;
-  font-size: 32px;
+  font-size: 30px;
   font-weight: bold;
   margin: 0;
+  line-height: 1.4;
 }
 
 /* الحقول */
 .input-group {
-  margin-bottom: 25px;
+  margin-bottom: 20px;
   text-align: right;
-  padding-top: 100px; /* يضمن أن أول حقل يظهر بعد الانحناء */
+  padding-top: 60px; /* بداية الحقول بعد الانحناء مباشرة */
 }
 
 .input-group label {
   display: block;
   color: #1b5e20;
   font-weight: bold;
-  font-size: 18px;
-  margin-bottom: 8px;
+  font-size: 16px;
+  margin-bottom: 6px;
 }
 
 .input-group select,
 .input-group input {
   width: 100%;
-  padding: 14px;
+  padding: 12px;
   border: 2px solid #1b5e20;
   border-radius: 8px;
   background-color: white;
   color: #1b5e20;
   font-weight: bold;
-  font-size: 16px;
+  font-size: 15px;
   box-sizing: border-box;
 }
 
@@ -81,12 +82,12 @@ body {
   top: 50%;
   left: 10px;
   transform: translateY(-50%);
-  font-size: 28px;
+  font-size: 26px;
   color: #1b5e20;
   cursor: pointer;
   transition: transform 0.2s ease;
 }
 
 .search-icon:hover {
-  transform: scale(1.2);
+  transform: scale(1.15);
 }
