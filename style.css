@@ -1,3 +1,4 @@
+/* إعدادات عامة */
 body {
   font-family: 'Cairo', sans-serif;
   background-color: #f0f4f8;
@@ -6,28 +7,31 @@ body {
   direction: rtl;
 }
 
+/* البطاقة البيضاء */
 .form-card {
   width: 100%;
   min-height: 100vh;
   margin: 0;
-  padding: 60px 20px 40px;
+  padding: 0 20px 40px;
   background-color: white;
   box-sizing: border-box;
   position: relative;
   z-index: 0;
 }
 
+/* الشريط الأخضر البيضوي */
 .title-bar {
   background-color: #1b5e20;
-  padding: 60px 40px;
+  padding: 40px 20px 100px; /* زيادة في الأسفل لتكوين الانحناء */
   text-align: center;
-  border-bottom-left-radius: 60px;
-  border-bottom-right-radius: 60px;
-  margin-bottom: -80px;
+  border-bottom-left-radius: 100px;
+  border-bottom-right-radius: 100px;
+  margin-bottom: -80px; /* يدمج الحد السفلي مع البطاقة البيضاء */
   z-index: 1;
   position: relative;
 }
 
+/* العنوان داخل الشريط */
 .title-bar h1 {
   color: white;
   font-size: 32px;
@@ -35,9 +39,11 @@ body {
   margin: 0;
 }
 
+/* الحقول */
 .input-group {
   margin-bottom: 25px;
   text-align: right;
+  padding-top: 100px; /* يضمن أن أول حقل يظهر بعد الانحناء */
 }
 
 .input-group label {
@@ -61,6 +67,7 @@ body {
   box-sizing: border-box;
 }
 
+/* حقل رقم الاكتتاب مع زر البحث */
 .input-with-icon {
   position: relative;
 }
