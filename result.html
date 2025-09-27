@@ -1,20 +1,75 @@
-<div class="result-grid">
-  <div class="score-box max">
-    <span>2600</span>
-    <small>الحد الأعلى</small>
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>نتيجة الطالب</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="result-style.css">
+</head>
+<body>
+  <div class="app-header">
+    <h1>📘 نتيجة الثانوية العامة</h1>
+    <h2>فرع الأدبي - منهاج دمشق</h2>
   </div>
 
-  <div class="score-box min">
-    <span>1100</span>
-    <small>الحد الأدنى</small>
+  <div class="card">
+    <h3>👤 الاسم الثلاثي</h3>
+    <p>محمد أحمد العلي</p>
   </div>
 
-  <div class="score-box status">
-    <span class="status-text">راسب</span>
+  <div class="card">
+    <h3>📄 معلومات الطالب</h3>
+    <p><strong>رقم الاكتتاب:</strong> 1773960</p>
+    <p><strong>المحافظة:</strong> ريف دمشق</p>
+    <p><strong>المركز:</strong> دوما الجنوبي</p>
+    <p><strong>رقم الجلوس:</strong> 5</p>
   </div>
 
-  <div class="score-box total">
-    <span>1384</span>
-    <small>المجموع</small>
+  <!-- تنسيق النتيجة المركزية -->
+  <div class="result-grid">
+    <div class="score-box max">
+      <span>2600</span>
+      <small>الحد الأعلى</small>
+    </div>
+
+    <div class="score-box status">
+      <span class="status-text">راسب</span>
+    </div>
+
+    <div class="score-box min">
+      <span>1100</span>
+      <small>الحد الأدنى</small>
+    </div>
+
+    <div class="score-box total">
+      <span>1384</span>
+      <small>المجموع</small>
+    </div>
   </div>
-</div>
+
+  <div class="card">
+    <h3>📊 العلامات</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>المادة</th>
+          <th>العلامة</th>
+          <th>العظمى</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>لغة عربية</td><td>84</td><td>400</td></tr>
+        <tr><td>لغة إنكليزية</td><td>200</td><td>400</td></tr>
+        <tr><td>التاريخ</td><td>160</td><td>600</td></tr>
+        <tr><td>الجغرافيا</td><td>160</td><td>600</td></tr>
+        <tr><td>الفلسفة</td><td>160</td><td>600</td></tr>
+        <tr><td>التربية الدينية</td><td>120</td><td>200</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card result-card">
+    <p class="note">لا تيأس، أمامك فرصة أخرى 🌱</p>
+  </div>
+</body>
+</html>
