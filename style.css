@@ -17,15 +17,15 @@ body {
 
 .title-bar {
   background-color: #1b5e20;
-  padding: 25px;
+  padding: 36px;
   text-align: center;
-  border-radius: 12px;
+  border-radius: 30px;
   margin-bottom: 30px;
 }
 
 .title-bar h1 {
   color: white;
-  font-size: 32px;
+  font-size: 36px;
   font-weight: bold;
   margin: 0;
 }
@@ -61,7 +61,7 @@ body {
 }
 
 .input-with-icon input {
-  padding-left: 45px;
+  padding-left: 55px;
 }
 
 .search-icon {
