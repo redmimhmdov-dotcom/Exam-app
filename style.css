@@ -1,6 +1,6 @@
 /* إعدادات عامة */
 body {
-  font-family: 'Cairo', sans-serif;
+  font-family: 'Arial', sans-serif;
   margin: 0;
   padding: 0;
   direction: rtl;
@@ -23,7 +23,7 @@ body {
 }
 
 .title-bar h1 {
-  font-family: 'Amiri', serif;
+  font-family: 'Arial', sans-serif;
   color: white;
   font-size: 36px;
   font-weight: bold;
@@ -79,15 +79,15 @@ body {
 
 /* المكبرة داخل حقل رقم الاكتتاب */
 .input-with-icon input {
-  padding-left: 50px;
+  padding-right: 50px;
 }
 
 .search-icon {
   position: absolute;
   top: 50%;
-  left: 15px;
+  right: 20px;
   transform: translateY(-50%);
-  font-size: 32px;
+  font-size: 30px;
   color: #1b5e20;
   cursor: pointer;
   transition: transform 0.2s ease;
