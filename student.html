@@ -4,51 +4,32 @@
   <meta charset="UTF-8">
   <title>نتائج الثانوي</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="manifest" href="manifest.json">
   <link rel="stylesheet" href="style.css">
 </head>
-<body class="green-bg">
-  <div class="form-card">
-    <h1>نتائج الثانوي بفرعيها العلمي والأدبي</h1>
+<body>
+  <h1>نتائج الثانوي بفرعيها العلمي والأدبي</h1>
 
-    <form id="searchForm">
-      <div class="input-group">
-        <label>السنة</label>
-        <select id="year">
-          <option>2025</option>
-          <option>2024</option>
-        </select>
-      </div>
-
-      <div class="input-group">
-        <label>الفرع</label>
-        <select id="certificate">
-          <option value="scientific">علمي</option>
-          <option value="literary">أدبي</option>
-        </select>
-      </div>
-
-      <div class="input-group">
-        <label>رقم الاكتتاب</label>
-        <input type="text" id="number" placeholder="أدخل رقم الاكتتاب" required>
-      </div>
-
-      <div class="search-icon" onclick="searchResult()">
-        🔍
-      </div>
-    </form>
+  <div class="input-group">
+    <label>السنة</label>
+    <select>
+      <option>2025</option>
+      <option>2024</option>
+    </select>
   </div>
 
-  <script>
-    function searchResult() {
-      const inputNumber = document.getElementById('number').value;
-      const data = JSON.parse(localStorage.getItem('studentData'));
-      if (data && data.number === inputNumber) {
-        window.location.href = "result.html";
-      } else {
-        alert("❌ لا توجد نتيجة لهذا الرقم.");
-      }
-    }
-  </script>
+  <div class="input-group">
+    <label>الفرع</label>
+    <select>
+      <option>علمي</option>
+      <option>أدبي</option>
+    </select>
+  </div>
+
+  <div class="input-group">
+    <label>رقم الاكتتاب</label>
+    <input type="text" placeholder="ادخل رقم الاكتتاب">
+  </div>
+
+  <div class="search-icon">🔍</div>
 </body>
 </html>
