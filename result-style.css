@@ -62,11 +62,15 @@ body {
   border-collapse: collapse;
   margin-top: 10px;
   font-size: 16px;
+  table-layout: fixed;
 }
 .marks-table th, .marks-table td {
-  border: 1px solid #ccc;
-  padding: 12px;
+  border: 2px solid #1b5e20;
+  padding: 14px;
   text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .marks-table th {
   background-color: #e0f2f1;
